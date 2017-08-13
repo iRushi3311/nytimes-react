@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
+import InfiniteScroll from 'react-infinite-scroller';
 
 import ArticleHero from '../presentational/article-hero-view.js';
 import ArticleHero2 from '../presentational/article-hero-view-2.js';
@@ -18,47 +19,79 @@ const mapStateToProps = (state) => ({
     totalArticles: state.articlesWrapper.totalArticles,
 });
 
+const PAGE_SIZE = 10;
+
+const DEFAULT_STATE = {
+    articles:[],
+    totalArticles: 0,
+    hasMore: true,
+};
 
 export class ArticleListView extends Component {
 
     constructor(props){
         super(props);
 
-        this.state = {
-            articles:[],
-            totalArticles: 0,
-            currentPage: 0,
-            nextPage:0,
-        };
+        this.state = DEFAULT_STATE;
 
         this._makeFetchArticleCall = this._makeFetchArticleCall.bind(this);
+        this._loadMoreArticles = this._loadMoreArticles.bind(this);
     }
 
 
     componentDidMount(){
-        this._makeFetchArticleCall(this.props.category);
+        debugger;
+        this._makeFetchArticleCall(this.props.category, 0);
     }
 
     componentWillReceiveProps(nextProps){
-        this.setState({
-            articles: nextProps.articles,
-            totalArticles: nextProps.totalArticles,
-        });
 
         //User changed category to view different articles!
         if(!_.isEqual(this.props.category, nextProps.category)){
-            this._makeFetchArticleCall(nextProps.category);
+            // need to reset the state
+            this.setState({...DEFAULT_STATE});
+
+            debugger;
+            this._makeFetchArticleCall(nextProps.category, 0);
+
+            // Short circuit the function
+            return;
         }
+
+        const {articles} = this.state;
+        const newArticles = nextProps.articles;
+        const updatedArticles = articles.concat(newArticles);
+        this.setState({
+            articles: updatedArticles,
+            totalArticles: nextProps.totalArticles,
+            hasMore: (nextProps.totalArticles > updatedArticles.length)
+        });
 
     }
 
-    _makeFetchArticleCall(category){
-        const {nextPage} = this.state;
-        this.props.fetchArticle({key:category, pageOffset:nextPage, isSearch:false});
+    _makeFetchArticleCall(category, nextPage){
+        this.props.fetchArticle({
+            key:category,
+            pageOffset:nextPage,
+            isSearch:false
+        });
+    }
+
+    //TODO: Add failover mechanism
+    //This will fail upon error in any call made in the page-sequence!
+    _loadMoreArticles(){
+        const {totalArticles, articles} = this.state;
+
+        if(articles.length < totalArticles) {
+            //Make API call - if needed
+            this._makeFetchArticleCall(this.props.category, (articles.length / PAGE_SIZE));
+        }
+
+        this.setState({hasMore: false});
     }
 
     render() {
-        const {articles} = this.state;
+        const {articles, hasMore} = this.state;
         const articlesN_3 = articles.slice(3);
         if(_.isEmpty(articles)) {
             return null;
@@ -72,12 +105,17 @@ export class ArticleListView extends Component {
                 <ArticleHero2 article={articles.length >= 3 ? articles[2] : null }/>
 
                 <div style={{float:'none', clear:'both'}} />
-
-                {
-                    articlesN_3.map((article, index) =>
-                        <ArticleRow key={index} article={article} firstRow={index === 0 ? true : false}/>
-                    )
-                }
+                <InfiniteScroll pageStart={0}
+                                loadMore={this._loadMoreArticles}
+                                hasMore={hasMore}
+                                loader={<div className="loader">Loading ...</div>}
+                >
+                    {
+                        articlesN_3.map((article, index) =>
+                            <ArticleRow key={index} article={article} firstRow={index === 0 ? true : false}/>
+                        )
+                    }
+                </InfiniteScroll>
 
             </div>
         );
