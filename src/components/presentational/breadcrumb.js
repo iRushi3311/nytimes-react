@@ -21,7 +21,7 @@ class Breadcumb extends Component {
     };
 
     findDisplayName(backName) {
-        const items = _.get(AppConstants.SECTIONBARITEMS, 'sections');
+        const items = _.get(AppConstants.SECTION_BAR_ITEMS, 'sections');
         const foundItem =  _.filter(items, (item) => {
             return item.value === backName;
         });

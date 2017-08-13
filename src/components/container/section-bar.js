@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import AppConstants from '../../constants/app-constants.js';
 
 const HorizontalUL = styled.ul`
     width: 100%;
@@ -24,17 +25,6 @@ const ListItem = styled.li`
     cursor: pointer;
 `;
 
-const SECTION_BAR_ITEMS = {
-    sections:[
-        {display: 'Home', value: 'home'},
-        {display: 'World', value: 'world'},
-        {display: 'U.S.', value: 'us'},
-        {display: 'Politics', value: 'politics'},
-        {display: 'N.Y.', value: 'ny'},
-        {display: 'More', value: 'more'},
-    ]
-};
-
 class SectionBar extends Component {
 
     constructor(props){
@@ -53,6 +43,7 @@ class SectionBar extends Component {
     }
 
     render() {
+        const {SECTION_BAR_ITEMS} = AppConstants;
         return (
             <HorizontalUL>
                 {

@@ -1,5 +1,5 @@
 export default {
-    SECTIONBARITEMS: {
+    SECTION_BAR_ITEMS: {
                         sections:[
                             {display: 'Home', value: 'home'},
                             {display: 'World', value: 'world'},
