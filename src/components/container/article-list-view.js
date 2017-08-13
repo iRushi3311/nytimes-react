@@ -8,7 +8,7 @@ import ArticleHero2 from '../presentational/article-hero-view-2.js';
 import ArticleRow from '../presentational/article-row.js';
 
 import {fetchArticles} from "../../actions/fetch-articles.js";
-
+import AppConstants from '../../constants/app-constants.js';
 
 const mapDispatchToProps = (dispatch) => ({
    fetchArticle: (key) => dispatch(fetchArticles(key))
@@ -18,8 +18,6 @@ const mapStateToProps = (state) => ({
     articles: state.articlesWrapper.articles,
     totalArticles: state.articlesWrapper.totalArticles,
 });
-
-const PAGE_SIZE = 10;
 
 const DEFAULT_STATE = {
     articles:[],
@@ -84,7 +82,7 @@ export class ArticleListView extends Component {
 
         if(articles.length < totalArticles) {
             //Make API call - if needed
-            this._makeFetchArticleCall(this.props.category, (articles.length / PAGE_SIZE));
+            this._makeFetchArticleCall(this.props.category, (articles.length / AppConstants.PAGE_SIZE));
         }
 
         this.setState({hasMore: false});

@@ -10,4 +10,5 @@ export default {
                         ]
                      },
     THUMBNAILPLACEHOLDERURL: 'https://tinyurl.com/ycjeyx4d',
+    PAGE_SIZE: 10,
 };

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {Pagination} from 'react-bootstrap';
 import _ from 'lodash';
-
 import Breadcumb from '../presentational/breadcrumb.js';
 import ArticleRow from '../presentational/article-row.js';
-
 import {fetchArticles} from "../../actions/fetch-articles.js";
+import AppConstants from '../../constants/app-constants.js';
 
 const mapDispatchToProps = (dispatch) => ({
     fetchArticle: (key) => dispatch(fetchArticles(key))
@@ -18,23 +18,21 @@ const mapStateToProps = (state) => ({
 
 class ArticleSearchView extends Component {
 
-
     constructor(props){
         super(props);
-
         this.state = {
             articles:[],
             totalArticles: 0,
-            currentPage: 0,
-            nextPage:0,
+            activePage: 1,
         };
-
         this._makeFetchArticleCall = this._makeFetchArticleCall.bind(this);
+        this._handlePageSelection = this._handlePageSelection.bind(this);
     }
 
 
     componentDidMount(){
-        this._makeFetchArticleCall(this.props);
+        const qs = _.get(this.props, 'match.params.queryString');
+        this._makeFetchArticleCall(qs, 0); //On-Load pageOffset is - 0
     }
 
     componentWillReceiveProps(nextProps){
@@ -46,25 +44,35 @@ class ArticleSearchView extends Component {
             totalArticles: nextProps.totalArticles,
         });
 
-        //User changed category to view different articles!
+        //Reload upon - changed search-Query to view different articles
         if(!_.isEqual(oldQS, newQS)){
-            this._makeFetchArticleCall(nextProps);
+            this._makeFetchArticleCall(newQS, 0); //On-Change of Search - pageOffset is - 0
         }
     }
 
-    _makeFetchArticleCall(props){
+    _makeFetchArticleCall(queryString, nextPage){
         debugger;
-        const {match} = props;
-        const {params} = match;
-        const {queryString} = params;
-        const {nextPage} = this.state;
-
         this.props.fetchArticle({key:queryString, pageOffset:nextPage, isSearch:true});
     }
 
+    _handlePageSelection(eventKey){
+        const qs = _.get(this.props, 'match.params.queryString');
+        let pageOffset = 0;
+
+        this.setState({
+            activePage: eventKey
+        });
+
+        pageOffset = eventKey - 1 ;
+        this._makeFetchArticleCall(qs, pageOffset); //On-Change of Search - pageOffset is - 0
+
+    }
+
     render() {
-        const {backName, currentName, match} = this.props;
-        const {articles} = this.state;
+        const {backName, currentName} = this.props;
+        const {articles, totalArticles} = this.state;
+        const totalPages = Math.ceil(totalArticles / AppConstants.PAGE_SIZE);
+
         debugger;
         return (
             <div>
@@ -74,6 +82,14 @@ class ArticleSearchView extends Component {
                         <ArticleRow key={index} article={article} />
                     )
                 }
+
+                <div style={{textAlign: 'center', marginBottom: '30px'}}>
+                    <Pagination prev next first last ellipsis boundaryLinks
+                                maxButtons={5} items={totalPages}
+                                activePage={this.state.activePage}
+                                onSelect={this._handlePageSelection}
+                    />
+                </div>
             </div>
         );
     }
