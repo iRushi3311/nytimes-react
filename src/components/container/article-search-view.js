@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 
-import Breadcumb from './breadcrumb.js';
-import ArticleRow from './article-row.js';
+import Breadcumb from '../presentational/breadcrumb.js';
+import ArticleRow from '../presentational/article-row.js';
 
 import {fetchArticles} from "../../actions/fetch-articles.js";
 

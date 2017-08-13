@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 
-import ArticleHero from './article-hero-view.js';
-import ArticleHero2 from './article-hero-view-2.js';
-import ArticleRow from './article-row.js';
+import ArticleHero from '../presentational/article-hero-view.js';
+import ArticleHero2 from '../presentational/article-hero-view-2.js';
+import ArticleRow from '../presentational/article-row.js';
 
 import {fetchArticles} from "../../actions/fetch-articles.js";
 

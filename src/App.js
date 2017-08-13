@@ -4,9 +4,9 @@ import {HashRouter, Route, Switch, Link} from 'react-router-dom';
 import './App.css';
 import AppHeader from './components/presentational/app-header.js';
 import SectionBar from './components/container/section-bar.js';
-import ArticleListView from './components/presentational/article-list-view.js';
+import ArticleListView from './components/container/article-list-view.js';
 import ArticleDetailView from './components/presentational/article-detail-view.js';
-import ArticleSearchView from './components/presentational/article-search-view.js';
+import ArticleSearchView from './components/container/article-search-view.js';
 import Constants from './constants/translation/en.js';
 
 
