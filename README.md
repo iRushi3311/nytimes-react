@@ -7,7 +7,7 @@ This project is developed on mac OSX, node v8.2.1, npm v5.3.0 and bootstrapped w
 
 ## Setup Instructions
 
-Install node/npm as a pre-requisite for the project. 
+Install node/npm to run the project. 
 HomeBrew is the easiest way for OSX users. [Getting started with HomeBrew](https://brew.sh/)
 ### Install node
 ```
@@ -20,12 +20,11 @@ npm --version
 ```
 
 ### Start application
-Following command will start an embedded local server running at `port 3000`.  
+Run following command from the project-root, it will start an embedded local web-server at `port 3000`.  
 ```
 npm start
-
 ```
-nytimes-react app can be reached at `localhost:3000`.  
+Now, nytimes-react app can be reached at `localhost:3000`.  
 
 ## Next Iterations
 I will be adding following updates to the existing project. (Stay tunned!)
