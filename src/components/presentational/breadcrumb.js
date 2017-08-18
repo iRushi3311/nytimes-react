@@ -38,9 +38,6 @@ class Breadcumb extends Component {
                     <Link to="/"> {displayBackName} </Link>
                     {'  '} > {'  '}
                     <a>{currentName}</a>
-                    {
-
-                    }
                 </BreadCrumbSpan>
             </BreadCrumbWrapper>
         );

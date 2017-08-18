@@ -11,4 +11,5 @@ export default {
                      },
     THUMBNAILPLACEHOLDERURL: 'https://tinyurl.com/ycjeyx4d',
     PAGE_SIZE: 10,
+    MULTIMEDIA_BASE_URL: 'http://www.nytimes.com/',
 };

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Redirect} from 'react-router-dom';
 import {FormGroup, InputGroup, FormControl} from 'react-bootstrap';
 import styled from 'styled-components';
 
@@ -27,8 +26,6 @@ class SearchComponent extends Component {
     }
 
     _handleSearch(event){
-        debugger;
-        console.log("Search Event value :" + this.state.qs);
         //this.props.history.push('/search/q/' + this.state.qs);
         window.location.hash = '/search/q/' + this.state.qs;
     }

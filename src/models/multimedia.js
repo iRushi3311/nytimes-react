@@ -1,4 +1,4 @@
-const MultimediaBaseUrl = 'http://www.nytimes.com/';
+import AppConstants from '../constants/app-constants.js';
 
 const Multimedia = function (src) {
 
@@ -8,7 +8,7 @@ const Multimedia = function (src) {
 
     this.type = src.type;
     this.subtype = src.subtype;
-    this.url = MultimediaBaseUrl + src.url;
+    this.url = AppConstants.MULTIMEDIA_BASE_URL + src.url;
     this.height = src.height;
     this.width = src.width;
 

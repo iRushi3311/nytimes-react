@@ -15,8 +15,6 @@ class ArticleDetailView extends Component {
         const thumbnail = article.findImageBySubType('thumbnail');
         const thumbnailURL = !_.isEmpty(thumbnail) ? thumbnail.url : AppConstants.THUMBNAILPLACEHOLDERURL;
 
-        debugger;
-
         return (
             <div>
                 <Breadcumb backName={backName} currentName={currentName} />

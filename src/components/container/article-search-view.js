@@ -51,7 +51,6 @@ class ArticleSearchView extends Component {
     }
 
     _makeFetchArticleCall(queryString, nextPage){
-        debugger;
         this.props.fetchArticle({key:queryString, pageOffset:nextPage, isSearch:true});
     }
 
@@ -73,7 +72,6 @@ class ArticleSearchView extends Component {
         const {articles, totalArticles} = this.state;
         const totalPages = Math.ceil(totalArticles / AppConstants.PAGE_SIZE);
 
-        debugger;
         return (
             <div>
                 <Breadcumb backName={backName} currentName={currentName} />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import translationEN from '../../constants/translation/en.js';
-import SearchComponent from '../container/search-component.js';
+import SearchComponent from './search-component.js';
 
 const HeaderDiv = styled.div`
     background-color: #222;

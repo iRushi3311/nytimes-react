@@ -2,7 +2,7 @@ This project is developed on `mac OSX`, `node v8.2.1`, `npm v5.3.0` and bootstra
 
 ## Table of Contents
 
-- [Setup Instructions](#setup-instructions)
+- [Setup Instructions](#setup-instructions-stand-alone-mode)
 - [Container Orchestration](#container-orchestration)
 - [Next Iterations](#next-iterations)
 

@@ -3,7 +3,7 @@ import {HashRouter, Route, Switch, Link} from 'react-router-dom';
 
 import './App.css';
 import AppHeader from './components/presentational/app-header.js';
-import SectionBar from './components/container/section-bar.js';
+import SectionBar from './components/presentational/section-bar.js';
 import ArticleListView from './components/container/article-list-view.js';
 import ArticleDetailView from './components/presentational/article-detail-view.js';
 import ArticleSearchView from './components/container/article-search-view.js';

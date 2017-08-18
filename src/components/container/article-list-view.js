@@ -38,18 +38,15 @@ export class ArticleListView extends Component {
 
 
     componentDidMount(){
-        debugger;
         this._makeFetchArticleCall(this.props.category, 0);
     }
 
     componentWillReceiveProps(nextProps){
-
         //User changed category to view different articles!
         if(!_.isEqual(this.props.category, nextProps.category)){
             // need to reset the state
             this.setState({...DEFAULT_STATE});
 
-            debugger;
             this._makeFetchArticleCall(nextProps.category, 0);
 
             // Short circuit the function
@@ -64,7 +61,6 @@ export class ArticleListView extends Component {
             totalArticles: nextProps.totalArticles,
             hasMore: (nextProps.totalArticles > updatedArticles.length)
         });
-
     }
 
     _makeFetchArticleCall(category, nextPage){
