@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>>>C O M P O N E N T S --- snapshot test for ArticleDetailView +++ ArticleDetailView match with snapshot  1`] = `
+<div>
+  <div
+    className="sc-bdVaJa bhLhcS"
+  >
+    <span
+      className="sc-bwzfXH gCtkdg"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+         
+        Home
+         
+      </a>
+        
+       &gt; 
+        
+      <a>
+        Article
+      </a>
+    </span>
+  </div>
+  <h2>
+    So and so guy did bla bla bla
+  </h2>
+  <h5
+    style={
+      Object {
+        "marginBottom": "0px",
+      }
+    }
+  >
+    <span
+      className="author-info"
+    >
+      By RPatel
+    </span>
+      
+    <span
+      className="published-time"
+    >
+      August 17  - 05:00 AM
+    </span>
+  </h5>
+  <div
+    className="media margin-B20"
+  >
+    <div
+      className="media-left"
+    >
+      <img
+        alt="..."
+        className="media-object thumbnail-img"
+        src="http://www.nytimes.com/img_Z"
+      />
+    </div>
+    <div
+      className="media-body"
+    >
+      <p
+        className="article-body"
+      >
+        body text body text body text body text body text body text 
+      </p>
+    </div>
+  </div>
+  <iframe
+    className="margin-B20"
+    height="700px"
+    src="google.com"
+    style={
+      Object {
+        "border": "2px solid #000000",
+      }
+    }
+    width="100%"
+  />
+</div>
+`;

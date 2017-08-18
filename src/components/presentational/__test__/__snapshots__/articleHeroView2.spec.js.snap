@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>>>C O M P O N E N T S --- snapshot test for ArticleHero2 +++ ArticleHero2 match with snapshot  1`] = `
+<a
+  href="/article/12345"
+  onClick={[Function]}
+>
+  <div
+    className="hero-contianer-2 article-container"
+  >
+    <h4
+      className="hero-2-title-n2"
+    >
+       
+      So and so guy did bla bla bla
+       
+    </h4>
+    <h5
+      style={
+        Object {
+          "marginBottom": "0px",
+        }
+      }
+    >
+      <span
+        className="author-info"
+      >
+        By RPatel
+      </span>
+        
+      <span
+        className="published-time"
+      >
+        August 17  - 05:00 AM
+      </span>
+    </h5>
+  </div>
+</a>
+`;

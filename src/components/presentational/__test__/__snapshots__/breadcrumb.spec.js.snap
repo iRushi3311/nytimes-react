@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>>>C O M P O N E N T S --- snapshot test for BreadCrumb +++ BreadCrumb match with snapshot  1`] = `
+<div
+  className="sc-bdVaJa bhLhcS"
+>
+  <span
+    className="sc-bwzfXH gCtkdg"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+       
+      Home
+       
+    </a>
+      
+     &gt; 
+      
+    <a>
+      Search
+    </a>
+  </span>
+</div>
+`;

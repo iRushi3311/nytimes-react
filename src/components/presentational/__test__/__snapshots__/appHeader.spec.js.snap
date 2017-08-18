@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>>>C O M P O N E N T S --- snapshot test for AppHeader +++ AppHeader match with snapshot  1`] = `
+<div
+  className="sc-htpNat bRqiJX"
+>
+  <div
+    className="sc-bxivhb iQkVpv"
+  >
+     
+    THE TIMES
+     
+  </div>
+  <div
+    className="pull-right sc-bdVaJa bEfZTs"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="sc-bwzfXH eGbUHl form-group"
+      >
+        <span
+          className="input-group"
+        >
+          <span
+            className="override-border input-group-addon"
+          >
+            <span
+              className="glyphicon glyphicon-search"
+            />
+          </span>
+          <input
+            className="override-border form-control"
+            id={undefined}
+            onChange={[Function]}
+            placeholder="Search"
+            type="text"
+          />
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
+`;

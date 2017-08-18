@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>>>C O M P O N E N T S --- snapshot test for ArticleHero +++ ArticleHero match with snapshot  1`] = `
+<a
+  href="/article/12345"
+  onClick={[Function]}
+>
+  <div
+    className="hero-contianer article-container"
+  >
+    <div
+      className="hero-title-section"
+    >
+      <div
+        className="media"
+      >
+        <div
+          className="media-body"
+        >
+          <h3
+            className="media-heading title-n1 hero-title-n1"
+          >
+            So and so guy did bla bla bla
+          </h3>
+          <h5
+            style={
+              Object {
+                "marginBottom": "0px",
+              }
+            }
+          >
+            <span
+              className="author-info"
+            >
+              By RPatel
+            </span>
+              
+            <span
+              className="published-time"
+            >
+              August 17  - 05:00 AM
+            </span>
+          </h5>
+        </div>
+        <div
+          className="media-right"
+        >
+          <img
+            alt="..."
+            className="media-object thumbnail-img"
+            src="http://www.nytimes.com/img_Z"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="hero-body-section clip-text"
+    >
+      body text body text body text body text body text body text 
+    </div>
+  </div>
+</a>
+`;
