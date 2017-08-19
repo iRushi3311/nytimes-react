@@ -13,7 +13,7 @@ const URL_FQ_MAP = {
     ny: 'glocations:(\\"New York City\\")',
 };
 
-const defaultParams = {
+export const defaultParams = {
     'api-key': API_KEY,
     'fq': URL_FQ_MAP.home,
     'page': 0,
