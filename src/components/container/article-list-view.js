@@ -36,7 +36,6 @@ export class ArticleListView extends Component {
         this._loadMoreArticles = this._loadMoreArticles.bind(this);
     }
 
-
     componentDidMount(){
         this._makeFetchArticleCall(this.props.category, 0);
     }

@@ -17,6 +17,7 @@
     "react-test-renderer": "^15.6.1",
     "redux": "^3.7.2",
     "redux-saga": "^0.15.6",
+    "sinon": "^3.2.1",
     "styled-components": "^2.1.2"
   },
   "scripts": {

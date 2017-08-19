@@ -16,7 +16,7 @@ const mapStateToProps = (state) => ({
     totalArticles: state.articlesWrapper.totalArticles,
 });
 
-class ArticleSearchView extends Component {
+export class ArticleSearchView extends Component {
 
     constructor(props){
         super(props);
