@@ -12,21 +12,22 @@ This project is developed on `mac OSX`, `node v8.2.1`, `npm v5.3.0` and bootstra
 
 ## Setup Instructions (Stand alone mode)
 - Install node/npm to run the project.
-- Intall YARN [Optional] 
+- Install YARN [Optional] 
 > **YARN** Yarn is a package manager for your code. It allows you to use and share code with other developers from around the world. Yarn does this quickly, securely, and reliably so you don’t ever have to worry.
 > Curious about [YARN](https://yarnpkg.com/en/)? 
 > Please visit -[Getting started with YARN](https://yarnpkg.com/en/docs/getting-started)
 
-#### Direct Install (Windows / MacOSX)
+ 
+### Direct Install (Windows / MacOSX)
 Install NodeJS directly using msi / dmg installer from [NodeJS Download Page](https://nodejs.org/en/download/)
 
-#### HomeBrew for OSX
+### HomeBrew for OSX
 HomeBrew is the easiest way for OSX users. [Getting started with HomeBrew](https://brew.sh/)
 ```
 # HomeBrew command
 brew install node
 ``` 
-#### MacPorts for OSX
+### MacPorts for OSX
 MacPorts is another package installer for OSX users. [Getting started with MacPorts](https://www.macports.org/index.php)
 ```
 # MacPort commands
@@ -58,7 +59,7 @@ Now, nytimes-react app can be reached at `localhost:3000`.
 The project contains unit-test coverage for most of the react-components and other pieces that put the app together.
 Run following command from the **Project-Root** `cd [path/to/project/directory]`, it will start running test-suites for the app.
 
-####Interactive Mode  
+#### Interactive Mode  
 ```
 # Node
 npm test
@@ -69,7 +70,7 @@ yarn test
 - Press **`a`** to run all the tests
 - Press **`q`** to quit
 
-####Non-Interactive Mode / CI Mode
+#### Non-Interactive Mode / CI Mode
 ```
 # npm
 CI=true npm test
