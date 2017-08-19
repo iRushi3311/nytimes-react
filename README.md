@@ -97,7 +97,7 @@ yarn test:coverageNC
 ```
 
 #### Update Snapshot
-Once you update component ( `presentational` **or** `container` ), you need to update snapshot-test of that holds previous state of the component.
+Once you update component ( `presentational` **or** `container` ), you need to update snapshot-test that holds previous state of the component.
 ```
 # npm
 npm test -- -u
